@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	"gopkg.in/yaml.v3"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 
 	"nexus/widgets"
 )
@@ -42,8 +42,6 @@ func initialModel() model {
 			showWidgets = append(showWidgets, widgets.NewTodoWidget(widgetConfig))
 		case "timer":
 			showWidgets = append(showWidgets, widgets.NewTimerWidget(widgetConfig))
-		case "spinner":
-			showWidgets = append(showWidgets, widgets.NewSpinnerWidget(widgetConfig))
 		case "table":
 			showWidgets = append(showWidgets, widgets.NewTableWidget(widgetConfig))
 		}
@@ -83,10 +81,12 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	var views []string
+	var s string
 	for _, w := range m.widgets {
 		views = append(views, w.View())
 	}
-	return strings.Join(views, "\n")
+	s = lipgloss.JoinHorizontal(lipgloss.Top, views...)
+	return s
 }
 
 func main() {

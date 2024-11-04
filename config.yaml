@@ -5,38 +5,29 @@ widgets:
       label: "green"
       text: "white"
     position:
-      top: 1
-      left: 2
-      height: 1
-      width: 1
+      width: 20
+      height: 5
   timer:
     enabled: true
     colors:
       label: "green"
       text: "white"
     position:
-      top: 1
-      left: 2
-      height: 3
       width: 20
+      height: 5
   spinner:
     enabled: true
     colors:
       label: "green"
       text: "white"
     position:
-      top: 1
-      left: 2
-      height: 3
       width: 20
+      height: 5
   table:
     enabled: true
-    position:
-      top: 0
-      left: 0
-      height: 10
-      width: 50
     colors:
       label: "#ffffff"
       text: "#ffffff"
-    refresh_interval: 1
+    position:
+      width: 50
+      height: 10

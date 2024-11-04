@@ -43,10 +43,11 @@ type BaseWidget struct {
 func NewBaseWidget(config WidgetConfig) BaseWidget {
 	style := lipgloss.NewStyle().
 		Foreground(lipgloss.Color(config.Colors.Text)).
-		MarginLeft(config.Position.Left).
-		MarginTop(config.Position.Top).
 		Width(config.Position.Width).
-		Height(config.Position.Height)
+		Height(config.Position.Height).
+		Align(lipgloss.Center, lipgloss.Center).
+		BorderStyle(lipgloss.NormalBorder()).
+		BorderForeground(lipgloss.Color("69"))
 
 	return BaseWidget{
 		config: config,
