@@ -42,6 +42,10 @@ func initialModel() model {
 			showWidgets = append(showWidgets, widgets.NewTodoWidget(widgetConfig))
 		case "timer":
 			showWidgets = append(showWidgets, widgets.NewTimerWidget(widgetConfig))
+		case "spinner":
+			showWidgets = append(showWidgets, widgets.NewSpinnerWidget(widgetConfig))
+		case "table":
+			showWidgets = append(showWidgets, widgets.NewTableWidget(widgetConfig))
 		}
 	}
 
