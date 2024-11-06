@@ -30,7 +30,6 @@ func initialModel() model {
 		log.Fatal(err)
 	}
 
-	// Initialize widgets based on config
 	var showWidgets []widgets.Widget
 	for name, widgetConfig := range config.Widgets {
 		if !widgetConfig.Enabled {
@@ -90,7 +89,7 @@ func (m model) View() string {
 }
 
 func main() {
-	p := tea.NewProgram(initialModel())
+	p := tea.NewProgram(initialModel(), tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("An error has occurred: %v", err)
 		os.Exit(1)

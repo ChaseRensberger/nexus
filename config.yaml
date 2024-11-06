@@ -1,6 +1,6 @@
 widgets:
   todo:
-    enabled: true
+    enabled: false
     colors:
       label: "green"
       text: "white"
@@ -13,10 +13,10 @@ widgets:
       label: "green"
       text: "white"
     position:
-      width: 20
-      height: 5
+      width: 50
+      height: 10
   spinner:
-    enabled: true
+    enabled: false
     colors:
       label: "green"
       text: "white"
